@@ -21,7 +21,7 @@ node --version
 # 3. npm
 info "Upgrading npm..."
 npm install -g npm@latest
-npm install-scripts approve --all
+npm config set allow-scripts=true --location=user
 
 # 4. OpenClaw
 info "Installing OpenClaw..."
