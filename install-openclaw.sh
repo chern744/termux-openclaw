@@ -26,16 +26,11 @@ npm install -g npm@latest
 info "Installing OpenClaw..."
 npm install -g openclaw@latest
 
-# 5. fs-safe — install latest pinned to OpenClaw's tree
-info "Installing @openclaw/fs-safe..."
-NPM_GLOBAL_ROOT="$(npm root -g)"
-npm install --prefix "$NPM_GLOBAL_ROOT/openclaw" @openclaw/fs-safe@latest --legacy-peer-deps
-
-# 6. Verify fs-safe version
+# 5. Verify fs-safe version
 FS_SAFE_VERSION=$(node -e "console.log(require('$NPM_GLOBAL_ROOT/openclaw/node_modules/@openclaw/fs-safe/package.json').version)")
 info "fs-safe version: $FS_SAFE_VERSION"
 
-# 7. Patch fs-safe for Android
+# 6. Patch fs-safe for Android
 info "Patching fs-safe for Android /data permissions..."
 NPM_GLOBAL_ROOT="$NPM_GLOBAL_ROOT" node <<'PATCH'
 const fs = require('fs');
@@ -66,8 +61,9 @@ for (const f of fs.readdirSync(dist)) {
 }
 PATCH
 
-# 8. Hand off to onboarding
+# 7. Hand off to onboarding
 info "Done. Launching onboarding..."
 echo
+mkdir .openclaw
 chmod +x $HOME/.openclaw
 openclaw onboard
