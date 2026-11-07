@@ -27,3 +27,15 @@ chmod +x install-openclaw.sh
 ## Important
 
 The installer installs the latest Node.js, npm, and OpenClaw releases, and patches a file inside OpenClaw's `@openclaw/fs-safe` package for Android. OpenClaw updates may change those package files or behavior and cause the patch or other parts of this installer to fail. Review the script before running it and back up any important data.
+
+## Openclaw 2026.11.1
+
+Gateway partially disabled: openclaw gateway survives, but gateway stop or restart is now unavailable on android. 
+
+```termux
+openclaw gateway
+# works, gateway started
+openclaw gateway start
+openclaw gateway stop
+# these were banned on android
+```
