@@ -21,7 +21,7 @@ node --version
 # 3. npm
 info "Upgrading npm..."
 npm install -g npm@latest
-npm config set allow-scripts=true --location=user
+npm config set allow-scripts=true
 
 # 4. OpenClaw
 info "Installing OpenClaw..."
@@ -70,6 +70,6 @@ PATCH
 # 8. Hand off to onboarding
 info "Done. Launching onboarding..."
 echo
-mkdir .openclaw
+mkdir $HOME/.openclaw
 chmod +x $HOME/.openclaw
 openclaw onboard
