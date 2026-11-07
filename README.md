@@ -18,6 +18,8 @@ chmod +x install-openclaw.sh
 Create `install-openclaw.sh` in Termux with `nano install-openclaw.sh`, paste in the contents of [`install-openclaw.sh`](install-openclaw.sh), then save with **Ctrl+O**, press **Enter**, and exit with **Ctrl+X**. Then run:
 
 ```sh
+nano install-openclaw.sh
+# Paste the script, save and exit
 chmod +x install-openclaw.sh
 ./install-openclaw.sh
 ```
